@@ -2,11 +2,13 @@
   --primary-text-color: #212121;
   --secondary-text-color: #757575;
   --accent-color: #2196f3;
+  --accent-color-card: rgba(33, 150, 243, 0.9);
   --logo-black: #000000;
   --logo-white: #ffffff;
   --stroke-color: #eeeeee;
   --text-color-in-footer: rgba(255, 255, 255, 0.6);
   --bg-primary-color: #2f303a;
+  --bg-primary-color-transperent: rgba(47, 48, 58, 0.8);
   --white-color: #ffffff;
   --bg-secondary-color: #f5f4fa;
   --border-color: #ececec;
@@ -226,7 +228,6 @@ h1 {
   border-radius: 4px;
   margin-bottom: 30px;
   background-color: var(--bg-secondary-color);
-  
 }
 .icon-benefits {
   width: 70px;
@@ -288,6 +289,30 @@ h2 {
 }
 .doing .doing-item:not(:last-child) {
   margin-right: 30px;
+}
+.doing-thumb {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.doing-sign {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-primary-color-transperent);
+  width: 100%;
+  height: 70px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--white-color);
 }
 
 /* Наша команда */
@@ -465,8 +490,47 @@ h2 {
 .cards-item:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+  opacity: 1;
 }
 
+.card-thumb {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.card-thumb::before {
+  display: inline-block;
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-color-card);
+  opacity: 0;
+}
+
+.card-thumb:hover:before {
+  opacity: 1;
+}
+.card-coment:focus,
+.card-coment:hover {
+  opacity: 1;
+}
+
+.card-coment {
+  position: absolute;
+  display: block;
+
+  width: 100%;
+  height: 100%;
+  padding: 63px 24px;
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--white-color);
+  opacity: 0;
+
+  /* or 156% */
+  letter-spacing: 0.03em;
+}
 /* Футер */
 .footer {
   background-color: var(--bg-primary-color);
